@@ -86,6 +86,7 @@ Processing UPI payment of Rs.150 ...
 Payment successful via UPI.
 
 ================ TICKET ================
+
 Booking ID : B1001
 Movie      : Avengers: Endgame
 Screen     : Screen 1
