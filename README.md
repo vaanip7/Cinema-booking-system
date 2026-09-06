@@ -3,6 +3,7 @@ Menu-driven Movie Ticket Booking System in modular C++ — built for a System De
 -----------------------------------------------------------------------------------------
 
 #✨ Features
+
 🎞️ List movies currently playing
 
 🕒 View shows (screen + time) for a chosen movie
