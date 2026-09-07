@@ -6,7 +6,7 @@
 #include "Cinema.cpp"
 #include "BookingService.cpp"
 
-// ---------- helpers ----------
+
 void printSeatLayout(Show* show) {
     std::cout << "\nSeat layout for " << show->getMovie()->getTitle()
               << " | Screen " << show->getScreen()->getScreenNumber()
@@ -29,7 +29,7 @@ std::vector<std::string> splitSeatInput(const std::string& line) {
 }
 
 Show* pickShow(Cinema& cinema) {
-    std::cout << "\n--- Movies currently playing ---\n";                 // F1
+    std::cout << "\n--- Movies currently playing ---\n";                
     std::vector<Movie>& movies = cinema.getMovies();
     for (size_t i = 0; i < movies.size(); i++) {
         std::cout << (i + 1) << ". " << movies[i].getTitle()
@@ -46,7 +46,7 @@ Show* pickShow(Cinema& cinema) {
         return nullptr;
     }
 
-    std::vector<Show*> shows = cinema.getShowsForMovie(movies[movieChoice - 1].getTitle()); // F2
+    std::vector<Show*> shows = cinema.getShowsForMovie(movies[movieChoice - 1].getTitle()); 
     std::cout << "\n--- Shows for " << movies[movieChoice - 1].getTitle() << " ---\n";
     for (size_t i = 0; i < shows.size(); i++) {
         std::cout << (i + 1) << ". Screen " << shows[i]->getScreen()->getScreenNumber()
@@ -65,7 +65,6 @@ Show* pickShow(Cinema& cinema) {
     return shows[showChoice - 1];
 }
 
-// ---------- sample data ----------
 void loadSampleData(Cinema& cinema) {
     cinema.addMovie(Movie("Avengers: Endgame", "English", 181));
     cinema.addMovie(Movie("Interstellar", "English", 169));
@@ -85,8 +84,7 @@ void loadSampleData(Cinema& cinema) {
     screen2.addSeat(Seat("C1", SeatType::PLATINUM));
     cinema.addScreen(screen2);
 
-    // NOTE: screens/movies vectors are fully populated BEFORE we take their addresses,
-    // so the pointers used below stay valid (no further push_back on those vectors).
+    
     Movie* endgame = &cinema.getMovies()[0];
     Movie* interstellar = &cinema.getMovies()[1];
     Screen* scr1 = &cinema.getScreens()[0];
@@ -97,11 +95,11 @@ void loadSampleData(Cinema& cinema) {
     cinema.addShow(Show(3, interstellar, scr2, "02:00 PM"));
 }
 
-// ---------- main menu ----------
+
 int main() {
     Cinema cinema("City Cinemas");
     loadSampleData(cinema);
-    BookingService bookingService;   // Association: main/menu interacts with BookingService
+    BookingService bookingService;  
 
     int choice = 0;
     while (choice != 7) {

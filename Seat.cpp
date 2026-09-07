@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-// ---- Encapsulation: seatNumber and seatType are private, exposed only via getters ----
+// Encapsulation
 enum class SeatType { SILVER, GOLD, PLATINUM };
 
 class Seat {
@@ -10,7 +10,7 @@ private:
     SeatType seatType;
 
 public:
-    // ---- Compile-Time Polymorphism: overloaded constructors ----
+    // Compile-Time Polymorphism
     Seat() : seatNumber("UNSET"), seatType(SeatType::SILVER) {}
     Seat(std::string number, SeatType type) : seatNumber(number), seatType(type) {}
 

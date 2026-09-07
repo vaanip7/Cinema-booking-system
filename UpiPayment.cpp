@@ -2,10 +2,10 @@
 #include <iostream>
 #include "Payment.cpp"
 
-// ---- Inheritance: UpiPayment IS-A Payment ----
+//  Inheritance
 class UpiPayment : public Payment {
 public:
-    // ---- Runtime Polymorphism: this override runs when called through a Payment* ----
+    // Runtime Polymorphism
     bool pay(double amount) override {
         std::cout << "\nProcessing UPI payment of Rs." << amount << " ...\n";
         char choice;

@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-// Single Responsibility: Movie only ever knows title, language, duration -- nothing else.
+// Single Responsibility
 class Movie {
 private:
     std::string title;

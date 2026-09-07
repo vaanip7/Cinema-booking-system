@@ -2,8 +2,6 @@
 #include <iostream>
 #include "Booking.cpp"
 
-// Single Responsibility: format and print a ticket -- printing ONLY.
-// (Booking deliberately does NOT print itself -- see SOLID: S.)
 class TicketPrinter {
 public:
     static void printTicket(Booking* booking) {

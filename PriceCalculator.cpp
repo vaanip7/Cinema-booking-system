@@ -2,7 +2,7 @@
 #include <vector>
 #include "ShowSeat.cpp"
 
-// Single Responsibility: turns a list of seats into a total amount -- pricing only.
+// Single Responsibility
 class PriceCalculator {
 public:
     static double calculateTotal(const std::vector<ShowSeat*>& seats) {
@@ -15,7 +15,7 @@ public:
 
 private:
     static double priceForType(SeatType type) {
-        // Constants instead of magic numbers
+        
         const double SILVER_PRICE   = 150.0;
         const double GOLD_PRICE     = 250.0;
         const double PLATINUM_PRICE = 400.0;

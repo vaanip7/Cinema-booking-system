@@ -5,11 +5,10 @@
 #include "Screen.cpp"
 #include "Show.cpp"
 
-// Cinema = the theatre: name; owns its screens.
 class Cinema {
 private:
     std::string name;
-    std::vector<Screen> screens;   // Composition: Cinema owns its Screens
+    std::vector<Screen> screens;  
     std::vector<Movie> movies;
     std::vector<Show> shows;
 

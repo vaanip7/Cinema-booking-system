@@ -3,12 +3,10 @@
 
 enum class SeatStatus { AVAILABLE, BOOKED };
 
-// ShowSeat = status of ONE physical seat FOR ONE particular show.
-// The same physical Seat can exist across many shows; each Show owns its own ShowSeat objects.
 class ShowSeat {
 private:
     Seat seat;
-    SeatStatus status;   // private -> Encapsulation, changed only through bookSeat()/releaseSeat()
+    SeatStatus status;   // private -> Encapsulation, will change only through bookSeat()
 
 public:
     ShowSeat() : status(SeatStatus::AVAILABLE) {}
@@ -16,8 +14,8 @@ public:
 
     bool checkAvailability() const { return status == SeatStatus::AVAILABLE; }
 
-    void bookSeat()    { status = SeatStatus::BOOKED; }     // controlled mutation
-    void releaseSeat() { status = SeatStatus::AVAILABLE; }  // controlled mutation
+    void bookSeat()    { status = SeatStatus::BOOKED; }   
+    void releaseSeat() { status = SeatStatus::AVAILABLE; } 
 
     Seat getSeat() const { return seat; }
     SeatStatus getStatus() const { return status; }

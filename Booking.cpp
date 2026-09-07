@@ -7,15 +7,15 @@
 
 enum class BookingStatus { PENDING, CONFIRMED, CANCELLED, FAILED };
 
-// Booking = booking id, which show, which seats, total amount, status.
+// Booking 
 class Booking {
 private:
-    static int nextBookingId;       // ---- Static Member: shared by ALL Booking objects ----
+    static int nextBookingId;       
 
     int bookingId;
-    Show* show;                     // Association: Booking refers to a Show it does not own
+    Show* show;                    
     Customer customer;
-    std::vector<ShowSeat*> seats;   // Aggregation: references ShowSeats owned by Show
+    std::vector<ShowSeat*> seats;   
     double totalAmount;
     BookingStatus status;
     std::string paymentMethod;
@@ -23,7 +23,7 @@ private:
 public:
     Booking(Show* s, Customer c, std::vector<ShowSeat*> selectedSeats, double amount)
         : show(s), customer(c), seats(selectedSeats), totalAmount(amount), status(BookingStatus::PENDING) {
-        this->bookingId = nextBookingId++;   // ---- 'this' keyword used to disambiguate ----
+        this->bookingId = nextBookingId++;  
     }
 
     int getBookingId() const { return this->bookingId; }
@@ -43,4 +43,4 @@ public:
     void cancel() { status = BookingStatus::CANCELLED; }
 };
 
-int Booking::nextBookingId = 1001;   // static member definition -- booking IDs start at B1001
+int Booking::nextBookingId = 1001;  

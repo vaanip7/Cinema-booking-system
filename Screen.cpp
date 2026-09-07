@@ -2,7 +2,7 @@
 #include <vector>
 #include "Seat.cpp"
 
-// Composition: a Screen owns its Seats. If the Screen is destroyed, the Seats go with it.
+// Composition
 class Screen {
 private:
     int screenNumber;

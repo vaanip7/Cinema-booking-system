@@ -5,7 +5,7 @@
 class CashPayment : public Payment {
 public:
     bool pay(double amount) override {
-        // Cash is collected at the counter -- modelled here as always successful
+        
         std::cout << "\nCollecting Rs." << amount << " in cash at the counter...\n";
         std::cout << "Cash payment received.\n";
         return true;
